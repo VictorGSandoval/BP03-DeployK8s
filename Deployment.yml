@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+
+kind: Deployment
+
+metadata:
+
+  name: mywebservice-deployment
+
+spec:
+
+  replicas: 2 # We want two pods for this deployment
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: mywebservice
+
+    spec:
+
+      containers:
+
+      - name: web-1-10
+
+        image: nginx:1.10
+
+        ports:
+
+        - containerPort: 80
